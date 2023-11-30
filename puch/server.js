@@ -1,11 +1,9 @@
 const express = require('express')
 const morgan = require('morgan')
-const routes = require('./routes/router')
 const index = require ('./routes/index.router')
 const cors = require("cors")
 const app = express()
 app.use(express.json());
-app.use('/', routes);
 app.use('/usuarios',index);
 const options = {
   origin:['http://localhost:9000']

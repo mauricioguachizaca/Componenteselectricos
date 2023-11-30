@@ -24,22 +24,21 @@ exports.putUsuarios= async(req,res)=>{
         // Utiliza findOne para obtener un usuario específico por su ID
         const usuarioInfo = await usuario.findById((req.params.id));
         console.log("este es el usuario",usuarioInfo)
+        usuarioInfo.nombre = nuevosdatos.nombre
+        usuarioInfo.apellido = nuevosdatos.apellido
+        usuarioInfo.ID = nuevosdatos.ID
+        usuarioInfo.provincia = nuevosdatos.provincia
+         await usuarioInfo.save()
+         res.json({
+             mensaje: "Producto actualizado",
+             usuario: usuarioInfo,
+         });
+         
         if (!usuarioInfo) {
             return res.status(404).json({
                 mensaje: "No hay producto",
             });
         }
-
-        // Actualiza el usuario con los nuevos datos y devuelve el documento actualizado
-       usuarioInfo.nombre = nuevosdatos.nombre
-       usuarioInfo.apellido = nuevosdatos.apellido
-       usuarioInfo.ID = nuevosdatos.ID
-       usuarioInfo.provincia = nuevosdatos.provincia
-        await usuarioInfo.save()
-        res.json({
-            mensaje: "Producto actualizado",
-            usuario: usuarioInfo,
-        });
     } catch (error) {
         console.error(error);
         res.status(500).json({
@@ -73,19 +72,19 @@ exports.deleteUsuarios= async(req,res)=>{
 }
 exports.getidUsuarios= async(req,res)=>{
     try {
-        const usuarioInfo = await usuario.findById((req.params.id));
-
-        if (!usuarioInfo) {
+        const nombreProducto =  req.params.nombre;
+        const productos = await usuario.find({nombre: nombreProducto});
+        if (productos.length === 0) {
             return res.status(404).json({
                 mensaje: "No hay ese producto"
             });
         }
 
-        res.json(usuarioInfo);
+        res.json(productos);
     } catch (error) {
         console.error(error);
         res.status(500).json({
             mensaje: "Error interno del servidor"
         });
-    }   
+    }  
 }

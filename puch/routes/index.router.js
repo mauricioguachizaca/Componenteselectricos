@@ -6,7 +6,7 @@ router.get("/",personaController.getUsuarios)
 router.post("/",personaController.postUsuarios)
 router.put("/actualiza/:id",personaController.putUsuarios)
 router.delete("/eliminar/:id",personaController.deleteUsuarios)
-router.get("/buscar/:id",personaController.getidUsuarios)
+router.get("/buscar/:nombre",personaController.getidUsuarios)
 
 router.get("/",medidorController.getMedidor)
 router.post("/",medidorController.postMedidor)
