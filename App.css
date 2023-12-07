@@ -1,0 +1,74 @@
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f0f0f0;
+  padding: 50px 0;
+ }
+ 
+ .titulo {
+  text-align: center;
+  margin-bottom: 50px;
+ }
+ 
+ .contenido {
+  display: inline-flex;
+  justify-content: space-around;
+  width: 80%;
+ }
+ 
+ .card {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 30px;
+  margin-bottom: 50px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 40%;
+ }
+ 
+ .card button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #000000;
+  color: rgb(255, 255, 255);
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+ }
+ .background-image {
+  background: linear-gradient(45deg, #f0f0f0, #f0f0f0);
+ }
+ .mi-input {
+  width: 400px; /* Ancho personalizado */
+  height: 40px; /* Altura personalizada */
+  border: 2px solid green; /* Borde verde */
+  border-radius: 5px; /* Bordes redondeados */
+  background-color: transparent; /* Fondo transparente */
+  padding: 8px; /* Relleno interno */
+  font-size: 16px; /* Tamaño de la fuente */
+  color: #333; /* Color del texto */
+}
+.card2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 30px;
+  margin-bottom: 50px;
+  box-shadow: 0 4px 6px rgba(91, 91, 91, 0.1);
+  width: 40%;
+ }
+ .center-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  margin: 0;
+  background-color: #f0f0f0; /* Puedes establecer el color de fondo de la página web aquí */
+}
